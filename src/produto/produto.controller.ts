@@ -12,6 +12,12 @@ export class ProdutoController {
     return this.produtoService.findAll();
   }
 
+  // feature: buscar produtos por nome
+  @Get('/nome/:nome')
+  findByNome(@Param('nome') nome: string) {
+    return this.produtoService.findByNome(nome);
+  }
+
   @Get('/:id')
   findById(@Param('id') id: string) {
     return this.produtoService.findById(Number(id));

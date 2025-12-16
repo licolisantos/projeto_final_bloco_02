@@ -6,7 +6,7 @@ export class Produto {
 
   @PrimaryGeneratedColumn()
   id: number;
-
+q
   @Column({ length: 100 })
   nome: string;
 

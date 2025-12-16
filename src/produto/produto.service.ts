@@ -3,6 +3,8 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Produto } from './entities/produto.entity';
 import { Categoria } from '../categoria/entities/categoria.entity';
+import { Like } from 'typeorm';
+
 
 @Injectable()
 export class ProdutoService {
@@ -25,6 +27,14 @@ export class ProdutoService {
       relations: ['categoria'],
     });
   }
+
+  // feature: buscar propdutos por nome
+  findByNome(nome: string): Promise<Produto[]> {
+  return this.produtoRepository.find({
+    where: { nome: Like(`%${nome}%`) },
+    relations: ['categoria'],
+  });
+}
 
   async create(produto: Produto): Promise<Produto> {
     const categoria = await this.categoriaRepository.findOneBy({
