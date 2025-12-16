@@ -5,6 +5,7 @@ import { Module } from '@nestjs/common';
 // Importa o TypeOrmModule, responsável por fazer
 // a conexão com o banco de dados
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { CategoriaModule } from './categoria/categoria.module';
 
 // Decorator que define este arquivo como um módulo principal
 @Module({
@@ -40,6 +41,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       // com base nas entidades
       synchronize: true,
     }),
+
+    CategoriaModule,
   ],
 })
 
