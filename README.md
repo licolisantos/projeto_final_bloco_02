@@ -54,6 +54,7 @@ Construir uma **API REST** capaz de gerenciar **Categorias** e **Produtos** de u
 
 ## 🗂️ Estrutura do Projeto
 
+```bash
 projeto_final_bloco_02/
 ├── src/
 ├── test/
@@ -63,7 +64,8 @@ projeto_final_bloco_02/
 ├── nest-cli.json
 ├── tsconfig.json
 ├── tsconfig.build.json
-├── README.md
+└── README.md
+```
 
 
 ---
